@@ -45,7 +45,6 @@ export function ExperiencePage() {
                   ))}
                 </ul>
               )}
-              {item.provenanceNote && <p className={styles.provenance}>{item.provenanceNote}</p>}
             </li>
           ))}
         </ul>

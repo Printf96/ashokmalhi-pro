@@ -1,0 +1,91 @@
+.cascade {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-accent-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.card:hover {
+  color: var(--color-accent-primary);
+  border-top-color: var(--color-accent-secondary);
+}
+
+/* Cascading stagger — each successive card in the grid sits a touch
+   lower than the last, giving the list a diagonal "cascade" reading
+   order instead of a flat grid (matches the brief's "cascade type"
+   request), while staying a plain CSS effect with no motion/animation. */
+.card:nth-child(3n + 2) {
+  margin-top: var(--space-3);
+}
+.card:nth-child(3n + 3) {
+  margin-top: var(--space-6);
+}
+
+.comingSoon {
+  opacity: 0.55;
+  border-style: dashed;
+  border-top-style: dashed;
+  cursor: default;
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
+}
+
+.label {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.status {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .cascade {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card:nth-child(3n + 2),
+  .card:nth-child(3n + 3) {
+    margin-top: 0;
+  }
+  .card:nth-child(2n) {
+    margin-top: var(--space-4);
+  }
+}
+
+@media (max-width: 560px) {
+  .cascade {
+    grid-template-columns: 1fr;
+  }
+  .card:nth-child(2n) {
+    margin-top: 0;
+  }
+}

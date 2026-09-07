@@ -8,6 +8,7 @@ import { ResearchPage } from '@/pages/ResearchPage';
 import { PublicationsPage } from '@/pages/PublicationsPage';
 import { PresentationsPage } from '@/pages/PresentationsPage';
 import { AchievementsPage } from '@/pages/AchievementsPage';
+import { SocialMediaPage } from '@/pages/SocialMediaPage';
 import { ContactPage } from '@/pages/ContactPage';
 
 export function App() {
@@ -22,6 +23,7 @@ export function App() {
         <Route path="publications" element={<PublicationsPage />} />
         <Route path="presentations" element={<PresentationsPage />} />
         <Route path="achievements" element={<AchievementsPage />} />
+        <Route path="social-media" element={<SocialMediaPage />} />
         <Route path="contact" element={<ContactPage />} />
       </Route>
     </Routes>

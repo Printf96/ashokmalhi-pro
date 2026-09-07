@@ -31,7 +31,6 @@ export function EducationPage() {
                 {item.institution}, {item.institutionCountry} · {item.endYear}
                 {item.grade ? ` · ${item.grade} ${item.gradeLabel ?? ''}` : ''}
               </p>
-              {item.provenanceNote && <p className={styles.provenance}>{item.provenanceNote}</p>}
             </li>
           ))}
         </ul>

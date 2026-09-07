@@ -62,16 +62,6 @@ const ICONS: Record<string, JSX.Element> = {
       strokeLinejoin="round"
     />
   ),
-  reddit: (
-    <>
-      <circle cx="10" cy="11.2" r="5" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M10 6.2L11 3l2.4.6" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-      <circle cx="13" cy="3.6" r="1" fill="currentColor" />
-      <circle cx="7.8" cy="11" r="0.8" fill="currentColor" />
-      <circle cx="12.2" cy="11" r="0.8" fill="currentColor" />
-      <path d="M7.8 13.2c.6.6 1.4.9 2.2.9s1.6-.3 2.2-.9" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-    </>
-  ),
   discord: (
     <path
       d="M6.5 5.8C8 5 9 4.8 10 4.8s2 .2 3.5 1c1.3 2 1.8 4.2 1.7 6.6-1 .8-2 1.3-3 1.6l-.5-1c.5-.15 1-.35 1.4-.6-.35-.25-.7-.5-1-.8-1.4.65-2.9.65-4.3 0-.3.3-.65.55-1 .8.4.25.9.45 1.4.6l-.5 1c-1-.3-2-.8-3-1.6-.15-2.4.35-4.6 1.7-6.6zM8.2 9.7c-.5 0-.9.5-.9 1.1s.4 1.1.9 1.1.9-.5.9-1.1-.4-1.1-.9-1.1zm3.6 0c-.5 0-.9.5-.9 1.1s.4 1.1.9 1.1.9-.5.9-1.1-.4-1.1-.9-1.1z"
@@ -80,16 +70,20 @@ const ICONS: Record<string, JSX.Element> = {
       strokeLinejoin="round"
     />
   ),
-  telegram: (
-    <path
-      d="M17 4L2.5 9.6c-.6.25-.6.9 0 1.1l3.5 1.2 1.3 4.2c.15.5.75.6 1.1.2l2-2.1 3.6 2.7c.5.35 1.2.1 1.35-.5L17.5 4.6c.15-.5-.4-.9-.5-.6zM6.5 11.4l7-4.6-5.7 5.6-.15 2.4-1.15-3.4z"
-      fill="currentColor"
-    />
-  ),
-  blogger: (
+  blog: (
     <>
       <rect x="3" y="3" width="14" height="14" rx="3" stroke="currentColor" strokeWidth="1.5" />
       <path d="M7 7.5h2.5M7 10h6M7 12.5h6" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+    </>
+  ),
+  x: (
+    <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+  ),
+  medium: (
+    <>
+      <circle cx="6.2" cy="10" r="3.2" stroke="currentColor" strokeWidth="1.4" />
+      <ellipse cx="12.7" cy="10" rx="1.9" ry="3.2" stroke="currentColor" strokeWidth="1.4" />
+      <ellipse cx="16.6" cy="10" rx="0.9" ry="3.2" stroke="currentColor" strokeWidth="1.4" />
     </>
   ),
   email: (

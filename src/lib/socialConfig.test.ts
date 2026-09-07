@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { SOCIAL_LINKS, SAME_AS_LINKS } from './socialConfig';
+import { SOCIAL_LINKS, SOCIAL_RAIL_LINKS, ACADEMIC_RAIL_LINKS, SOCIAL_MEDIA_PAGE_LINKS, SAME_AS_LINKS } from './socialConfig';
 
 describe('SOCIAL_LINKS configuration', () => {
   it('gives every coming-soon entry a null URL and a "coming soon" tooltip', () => {
@@ -11,8 +11,8 @@ describe('SOCIAL_LINKS configuration', () => {
     }
   });
 
-  it('never has a fabricated URL for GitHub, Reddit, Discord, Telegram, or Blogger', () => {
-    for (const platform of ['github', 'reddit', 'discord', 'telegram', 'blogger']) {
+  it('never has a fabricated URL for X, GitHub, Discord, Blog, or Medium', () => {
+    for (const platform of ['x', 'github', 'discord', 'blog', 'medium']) {
       const link = SOCIAL_LINKS.find((l) => l.platform === platform);
       expect(link).toBeDefined();
       expect(link?.url).toBeNull();
@@ -52,5 +52,37 @@ describe('SOCIAL_LINKS configuration', () => {
 
   it('never includes a coming-soon (null) URL in SAME_AS_LINKS', () => {
     expect(SAME_AS_LINKS.every((url) => typeof url === 'string' && url.length > 0)).toBe(true);
+  });
+
+  it('puts exactly the 8 specified platforms in the left social rail, in order', () => {
+    expect(SOCIAL_RAIL_LINKS.map((l) => l.platform)).toEqual([
+      'x',
+      'facebook',
+      'instagram',
+      'github',
+      'discord',
+      'linkedin',
+      'blog',
+      'medium',
+    ]);
+  });
+
+  it('puts exactly Google Scholar, ResearchGate, and ORCID in the right academic rail', () => {
+    expect(ACADEMIC_RAIL_LINKS.map((l) => l.platform)).toEqual([
+      'google-scholar',
+      'researchgate',
+      'orcid',
+    ]);
+  });
+
+  it('never puts a contact entry in either rail', () => {
+    for (const link of [...SOCIAL_RAIL_LINKS, ...ACADEMIC_RAIL_LINKS]) {
+      expect(link.category).not.toBe('contact');
+    }
+  });
+
+  it('includes YouTube on the Social Media page even though it is not in the rail', () => {
+    expect(SOCIAL_MEDIA_PAGE_LINKS.map((l) => l.platform)).toContain('youtube');
+    expect(SOCIAL_RAIL_LINKS.map((l) => l.platform)).not.toContain('youtube');
   });
 });

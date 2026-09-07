@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { to: '/publications', label: 'Publications' },
   { to: '/presentations', label: 'Presentations' },
   { to: '/achievements', label: 'Achievements' },
+  { to: '/social-media', label: 'Social Media' },
   { to: '/contact', label: 'Contact' },
 ];
 
