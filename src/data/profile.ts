@@ -242,12 +242,13 @@ export const EXPERIENCE: ExperienceItem[] = [
 // source package's explicit instruction not to treat every
 // specialization term as a confirmed research classification.
 // "Artificial Intelligence of Things (AIoT)" removed per request;
-// "Sustainability" and "ML" added per request.
+// "Sustainability", "ML", and "FinTech" added per request.
 export const RESEARCH_INTERESTS: string[] = [
   'Artificial Intelligence',
   'ML',
   'Internet of Things',
   'Blockchain',
+  'FinTech',
   'Data Analytics',
   'Digital Transformation',
   'Digital Marketing',
