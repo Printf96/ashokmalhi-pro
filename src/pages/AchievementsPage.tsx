@@ -16,18 +16,18 @@ export function AchievementsPage() {
   return (
     <>
       <SeoHead
-        title={`Certifications | ${IDENTITY.displayName}`}
-        description={`Professional certifications held by ${IDENTITY.displayName}.`}
+        title={`Achievements | ${IDENTITY.displayName}`}
+        description={`Professional certifications and achievements held by ${IDENTITY.displayName}.`}
         path="/achievements"
         jsonLd={[
           buildBreadcrumbSchema([
             { name: 'Home', path: '/' },
-            { name: 'Certifications', path: '/achievements' },
+            { name: 'Achievements', path: '/achievements' },
           ]),
         ]}
       />
 
-      <Section eyebrow={`${CERTIFICATIONS.length} Certifications`} title="Certifications">
+      <Section eyebrow={`${CERTIFICATIONS.length} Certifications`} title="Achievements">
         <ul className={styles.list}>
           {CERTIFICATIONS.map((c) => (
             <li key={c.title} className={styles.card}>

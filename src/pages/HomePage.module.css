@@ -1,5 +1,5 @@
 .hero {
-  padding: var(--space-9) 0 var(--space-8);
+  padding: var(--space-7) 0 var(--space-5);
 }
 
 .heroInner {
@@ -27,6 +27,11 @@
   color: var(--color-text-secondary);
 }
 
+.bio {
+  max-width: 68ch;
+  margin-top: var(--space-3);
+}
+
 @media (max-width: 640px) {
   .heroInner {
     flex-direction: column;
@@ -34,23 +39,114 @@
   }
 }
 
-.bio {
-  max-width: 68ch;
-  margin-top: var(--space-4);
+/* Academic credibility indicators */
+.credibilitySection {
+  padding-bottom: var(--space-6);
 }
 
-.chipRow {
+.credibilityRow {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-2);
+  gap: var(--space-5);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-5) 0;
 }
 
-.chip {
+.credibilityItem {
+  min-width: 160px;
+}
+
+.credibilityValue {
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  color: var(--color-accent-primary);
+  line-height: 1.1;
+}
+
+.credibilityValueSmall {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.3;
+}
+
+.credibilityLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+/* Research interests — academic index card grid, not generic pill tags */
+.interestGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.interestCard {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-accent-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  color: var(--color-text-secondary);
+}
+
+.interestIndex {
   font-family: var(--font-mono);
   font-size: var(--fs-xs);
-  background: var(--color-surface-2);
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  padding: var(--space-1) var(--space-3);
-  color: var(--color-text-secondary);
+  color: var(--color-accent-primary);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .interestGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Selected publications */
+.pubList {
+  list-style: none;
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.pubItem {
+  border-left: 2px solid var(--color-border-strong);
+  padding-left: var(--space-4);
+}
+
+.pubTitle {
+  color: var(--color-text-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pubTitle:hover {
+  color: var(--color-accent-primary);
+}
+
+.pubMeta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  margin: var(--space-1) 0 0;
+}
+
+.viewAll {
+  font-weight: 600;
 }

@@ -1,23 +1,17 @@
+import { Link } from 'react-router-dom';
 import { SeoHead } from '@/components/seo/SeoHead';
 import { Section } from '@/components/ui/Section';
 import { ProfileImage } from '@/components/ui/ProfileImage';
 import { IDENTITY, buildBreadcrumbSchema } from '@/lib/seo';
-import { PERSON, EDUCATION, EXPERIENCE } from '@/data/profile';
+import { PERSON } from '@/data/profile';
 import styles from './AboutPage.module.css';
-
-function formatDate(iso: string | null): string {
-  if (!iso) return 'Present';
-  const [year, month] = iso.split('-');
-  const date = new Date(Number(year), Number(month) - 1);
-  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-}
 
 export function AboutPage() {
   return (
     <>
       <SeoHead
         title={`About | ${IDENTITY.displayName}`}
-        description={`Biography, education, and professional experience of ${IDENTITY.displayName}, ${IDENTITY.professionalTitle} at ${IDENTITY.affiliation}.`}
+        description={`Biography of ${IDENTITY.displayName}, ${IDENTITY.professionalTitle} at ${IDENTITY.affiliation}.`}
         path="/about"
         jsonLd={[
           buildBreadcrumbSchema([
@@ -41,51 +35,12 @@ export function AboutPage() {
             </p>
             <p>Department (per Google Scholar): {PERSON.department}</p>
             <p>{PERSON.shortBio}</p>
+            <p className={styles.crossLinks}>
+              <Link to="/education">Education →</Link>
+              <Link to="/experience">Experience →</Link>
+            </p>
           </div>
         </div>
-      </Section>
-
-      <Section eyebrow="Academic Background" title="Education">
-        <ul className={styles.timeline}>
-          {EDUCATION.map((item) => (
-            <li key={item.order} className={styles.timelineItem}>
-              <p className={styles.timelineTitle}>
-                {item.degree}
-                {item.fieldOfStudy ? ` — ${item.fieldOfStudy}` : ''}
-              </p>
-              <p className={styles.timelineMeta}>
-                {item.institution}, {item.institutionCountry} · {item.endYear}
-                {item.grade ? ` · ${item.grade} ${item.gradeLabel ?? ''}` : ''}
-              </p>
-              {item.provenanceNote && <p className={styles.provenance}>{item.provenanceNote}</p>}
-            </li>
-          ))}
-        </ul>
-      </Section>
-
-      <Section eyebrow="Career" title="Professional Experience">
-        <ul className={styles.timeline}>
-          {EXPERIENCE.map((item) => (
-            <li key={item.order} className={styles.timelineItem}>
-              <p className={styles.timelineTitle}>
-                {item.role} · {item.organization}
-              </p>
-              <p className={styles.timelineMeta}>
-                {formatDate(item.startDate)} – {item.isCurrent ? 'Present' : formatDate(item.endDate)} ·{' '}
-                {item.organizationCountry}
-              </p>
-              {item.description && <p>{item.description}</p>}
-              {item.responsibilities.length > 0 && (
-                <ul className={styles.responsibilities}>
-                  {item.responsibilities.map((r) => (
-                    <li key={r}>{r}</li>
-                  ))}
-                </ul>
-              )}
-              {item.provenanceNote && <p className={styles.provenance}>{item.provenanceNote}</p>}
-            </li>
-          ))}
-        </ul>
       </Section>
 
       <Section eyebrow="Expertise" title="Skills & Languages">

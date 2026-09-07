@@ -36,4 +36,21 @@ describe('profile data counts (matches verified source data)', () => {
       }
     }
   });
+
+  it("contains every title the Home page's Selected Publications section expects", () => {
+    // Kept in sync with HomePage.tsx's SELECTED_PUBLICATION_TITLES —
+    // if a title here drifts (typo, rewording), that lookup would
+    // silently drop the entry instead of showing an error, so this
+    // test makes the mismatch loud instead.
+    const selectedTitles = [
+      'A Study on Responsible AI Awareness and Learning Engagement in Higher Education: The Mediating Roles of Trust in AI, AI Literacy, AI Usage Self-Efficacy, and Human–AI Collaboration',
+      'Green by Design AI in Fashion Retail and the Rise of the Conscious Consumer',
+      'Exploring Narrative Constructions of Market Sentiment: A Systematic Literature Review of Media Influence on Financial Behaviors and Economic Outcomes',
+      "A Study on Digital Intelligence and Influencer Marketing for Sustainable Diversification of India's Retail Economy: A Qualitative Study",
+    ];
+    const titles = PUBLICATIONS.map((p) => p.title);
+    for (const t of selectedTitles) {
+      expect(titles).toContain(t);
+    }
+  });
 });
