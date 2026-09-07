@@ -239,15 +239,18 @@ export const EXPERIENCE: ExperienceItem[] = [
 // PERSON.specializations (a broader set of focus terms), per the
 // source package's explicit instruction not to treat every
 // specialization term as a confirmed research classification.
-// "Artificial Intelligence of Things (AIoT)" removed per request.
+// "Artificial Intelligence of Things (AIoT)" removed per request;
+// "Sustainability" and "ML" added per request.
 export const RESEARCH_INTERESTS: string[] = [
   'Artificial Intelligence',
+  'ML',
   'Internet of Things',
   'Blockchain',
   'Data Analytics',
   'Digital Transformation',
   'Digital Marketing',
   'Technology Adoption',
+  'Sustainability',
 ];
 
 export interface PublicationItem {
@@ -259,7 +262,7 @@ export interface PublicationItem {
 }
 
 // The 10 confirmed Google Scholar publications. `researchAreas` are an
-// editorial reading of each title against the 8 confirmed research
+// editorial reading of each title against the confirmed research
 // interests (not supplied bibliographic metadata) — always rendered
 // with an explicit "inferred from title" qualifier, never presented as
 // confirmed metadata.
@@ -300,7 +303,7 @@ export const PUBLICATIONS: PublicationItem[] = [
       "A Study on Digital Intelligence and Influencer Marketing for Sustainable Diversification of India's Retail Economy: A Qualitative Study",
     year: 2025,
     citationCount: 12,
-    researchAreas: ['Digital Marketing'],
+    researchAreas: ['Digital Marketing', 'Sustainability'],
     researchAreasSource: 'inferred-from-title',
   },
   {
@@ -318,7 +321,7 @@ export const PUBLICATIONS: PublicationItem[] = [
     title: 'Assessing the Role of Digital Awareness in Promoting Polymer-Based Sustainability',
     year: 2024,
     citationCount: 5,
-    researchAreas: ['Digital Transformation'],
+    researchAreas: ['Digital Transformation', 'Sustainability'],
     researchAreasSource: 'inferred-from-title',
   },
   {
