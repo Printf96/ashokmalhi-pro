@@ -9,6 +9,7 @@ export const IDENTITY = {
   affiliation: 'Lovely Professional University',
   affiliationCountry: 'India',
   orcid: 'https://orcid.org/0000-0001-9756-5865',
+  scopusId: '57833141600',
   googleScholarUrl: 'https://scholar.google.com/citations?user=Uf8bU5sAAAAJ',
   researchGateUrl: 'https://www.researchgate.net/profile/Ashok-Malhi',
   linkedinUrl: 'https://www.linkedin.com/in/ashok-malhi/',

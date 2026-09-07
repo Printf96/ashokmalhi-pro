@@ -4,6 +4,8 @@ import styles from './Navigation.module.css';
 const NAV_ITEMS = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
+  { to: '/research', label: 'Research' },
+  { to: '/achievements', label: 'Certifications' },
   { to: '/contact', label: 'Contact' },
 ];
 

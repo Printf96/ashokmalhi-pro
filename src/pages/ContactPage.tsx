@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { SeoHead } from '@/components/seo/SeoHead';
 import { IDENTITY, buildBreadcrumbSchema } from '@/lib/seo';
 import { SOCIAL_LINKS } from '@/lib/socialConfig';
+import { PERSON } from '@/data/profile';
 import styles from './ContactPage.module.css';
 
 // Pulled from the single central social/contact configuration rather
@@ -75,6 +76,7 @@ export function ContactPage() {
                   <a href={EMAIL_LINK.url} title={EMAIL_LINK.tooltip}>
                     {EMAIL_LINK.url.replace('mailto:', '')}
                   </a>
+                  {PERSON.emailIsProvisional && ' (provisional, pending confirmation)'}
                 </p>
               </div>
             )}

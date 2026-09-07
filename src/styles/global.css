@@ -134,6 +134,14 @@ button {
   padding-inline: var(--space-5);
 }
 
+.mono-label {
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: var(--fs-xs);
+  color: var(--color-accent-primary);
+}
+
 @media (max-width: 640px) {
   .container {
     padding-inline: var(--space-4);

@@ -220,8 +220,13 @@ export const SOCIAL_LINKS: SocialLinkConfig[] = [
 /**
  * URLs eligible for JSON-LD `sameAs` — active, non-contact entries
  * only. Contact channels and any coming-soon placeholder are excluded
- * even though they appear in the visible icon rail.
+ * even though they appear in the visible icon rail. Scopus is appended
+ * separately: it's a verified academic identifier (matches the old
+ * project's seo.ts treatment) but isn't part of the icon-rail set.
  */
-export const SAME_AS_LINKS: string[] = SOCIAL_LINKS.filter(
-  (link) => link.status === 'active' && link.category !== 'contact' && link.url
-).map((link) => link.url as string);
+export const SAME_AS_LINKS: string[] = [
+  ...SOCIAL_LINKS.filter(
+    (link) => link.status === 'active' && link.category !== 'contact' && link.url
+  ).map((link) => link.url as string),
+  `https://www.scopus.com/authid/detail.uri?authorId=${IDENTITY.scopusId}`,
+];

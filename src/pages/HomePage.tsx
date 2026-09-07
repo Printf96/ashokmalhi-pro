@@ -1,7 +1,9 @@
 import { SeoHead } from '@/components/seo/SeoHead';
+import { Section } from '@/components/ui/Section';
 import { ProfileImage } from '@/components/ui/ProfileImage';
 import { IDENTITY, buildWebsiteSchema, buildProfilePageSchema } from '@/lib/seo';
 import { SAME_AS_LINKS } from '@/lib/socialConfig';
+import { PERSON, RESEARCH_INTERESTS } from '@/data/profile';
 import styles from './HomePage.module.css';
 
 export function HomePage() {
@@ -29,9 +31,20 @@ export function HomePage() {
               {IDENTITY.affiliationCountry}
             </p>
             <p>Academic Researcher &amp; Educator</p>
+            <p className={styles.bio}>{PERSON.professionalPositioning}</p>
           </div>
         </div>
       </section>
+
+      <Section eyebrow="Focus Areas" title="Research Interests">
+        <div className={styles.chipRow}>
+          {RESEARCH_INTERESTS.map((r) => (
+            <span key={r} className={styles.chip}>
+              {r}
+            </span>
+          ))}
+        </div>
+      </Section>
     </>
   );
 }

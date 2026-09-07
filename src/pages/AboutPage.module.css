@@ -1,11 +1,80 @@
-.section {
-  padding: var(--space-8) 0;
-}
-
 .profileRow {
   display: flex;
   gap: var(--space-6);
   align-items: flex-start;
   flex-wrap: wrap;
   margin-bottom: var(--space-6);
+}
+
+.bio {
+  max-width: 68ch;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.timelineItem {
+  border-left: 2px solid var(--color-border-strong);
+  padding-left: var(--space-4);
+}
+
+.timelineTitle {
+  color: var(--color-text-primary);
+  font-weight: 600;
+  margin: 0;
+}
+
+.timelineMeta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  margin: var(--space-1) 0 var(--space-2);
+}
+
+.responsibilities {
+  margin: var(--space-2) 0 0;
+  padding-left: 1.1em;
+  font-size: var(--fs-sm);
+}
+
+.provenance {
+  font-size: var(--fs-xs);
+  color: var(--color-warning);
+  margin-top: var(--space-2);
+}
+
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-6);
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: var(--space-1) var(--space-3);
+  color: var(--color-text-secondary);
+}
+
+.skillGroup {
+  margin-bottom: var(--space-5);
+}
+
+.skillGroupLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2);
 }
