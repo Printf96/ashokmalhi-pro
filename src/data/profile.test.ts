@@ -8,8 +8,9 @@ describe('profile data counts (matches verified source data)', () => {
   it('has exactly 5 experience records', () => {
     expect(EXPERIENCE).toHaveLength(5);
   });
-  it('has exactly 8 confirmed research interests', () => {
-    expect(RESEARCH_INTERESTS).toHaveLength(8);
+  it('has exactly 7 confirmed research interests (AIoT removed)', () => {
+    expect(RESEARCH_INTERESTS).toHaveLength(7);
+    expect(RESEARCH_INTERESTS).not.toContain('Artificial Intelligence of Things (AIoT)');
   });
   it('has exactly 10 publications', () => {
     expect(PUBLICATIONS).toHaveLength(10);

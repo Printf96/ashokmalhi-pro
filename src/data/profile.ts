@@ -235,13 +235,13 @@ export const EXPERIENCE: ExperienceItem[] = [
   },
 ];
 
-// Confirmed 8-domain research taxonomy — kept distinct from
+// Confirmed research taxonomy — kept distinct from
 // PERSON.specializations (a broader set of focus terms), per the
 // source package's explicit instruction not to treat every
 // specialization term as a confirmed research classification.
+// "Artificial Intelligence of Things (AIoT)" removed per request.
 export const RESEARCH_INTERESTS: string[] = [
   'Artificial Intelligence',
-  'Artificial Intelligence of Things (AIoT)',
   'Internet of Things',
   'Blockchain',
   'Data Analytics',
@@ -308,7 +308,10 @@ export const PUBLICATIONS: PublicationItem[] = [
       'Artificial Intelligence of Things (AIoT)-Enabled Personalized Banking: Investigating Intention to Adopt',
     year: 2024,
     citationCount: 2,
-    researchAreas: ['Artificial Intelligence of Things (AIoT)', 'Technology Adoption'],
+    // Title says "AIoT" (AI + IoT combined); tagged with both
+    // component taxonomy terms now that AIoT itself was removed from
+    // RESEARCH_INTERESTS.
+    researchAreas: ['Artificial Intelligence', 'Internet of Things', 'Technology Adoption'],
     researchAreasSource: 'inferred-from-title',
   },
   {
