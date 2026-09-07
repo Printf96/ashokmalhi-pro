@@ -15,11 +15,13 @@
  */
 
 export const PERSON = {
-  // As shown on the Google Scholar profile's affiliation field, not
-  // separately confirmed as an institutional record.
+  // Superseded on the About page by the affiliation-level "Lovely
+  // Professional University" per request — kept here only because
+  // it's still the verified Google Scholar profile field.
   department: 'Mittal School of Business',
+  // Supplied verbatim for About-page/Google-entity/LinkedIn-bio use.
   shortBio:
-    'Dr. Ashok Malhi is an academic researcher and Assistant Professor at Lovely Professional University, India. His work sits at the intersection of emerging technologies, business, digital transformation, and technology adoption, with research interests spanning Artificial Intelligence, Artificial Intelligence of Things (AIoT), Internet of Things, Blockchain, Digital Marketing, Data Analytics, and related technology applications. His professional journey combines academic experience with prior industry exposure in banking, management, consulting, and business development. He has taught students across MBA, BBA, and LLB programs and has contributed to academic seminars, conferences, research activities, faculty development, and university events. His research and academic interests focus on understanding how emerging technologies can be applied to business, organizations, consumer behavior, and digital transformation.',
+    'Dr. Ashok Malhi is an academic researcher, consultant, and Assistant Professor at Lovely Professional University, India, specializing in Artificial Intelligence, IoT, Machine Learning, Blockchain, FinTech, Digital Marketing, Data Analytics, Technology Adoption, and Sustainability. His professional background combines academic research with experience in banking, management, consulting, and business development. He is also the owner of Aakhetak.com, Printf.co.in, ViralBuzz.co.in, and Nobledon.in, reflecting his interests in technology, FinTech, digital transformation, sustainability, entrepreneurship, and digital platforms.',
   professionalPositioning:
     'Dr. Ashok Malhi is an academic researcher and educator working at the intersection of emerging technologies, business, digital transformation, and technology adoption.',
   // Provisional pending the user's explicit confirmation/replacement.
@@ -435,4 +437,26 @@ export const CERTIFICATIONS: CertificationItem[] = [
   { title: 'NISM VA Certification', date: '2017-06-01', order: 5 },
   { title: 'NISM VI Certification', date: '2016-01-01', order: 6 },
   { title: 'IRDA Certification', date: '2015-09-01', order: 7 },
+];
+
+export interface VentureItem {
+  name: string;
+  domain: string;
+  url: string;
+  role: string;
+  order: number;
+}
+
+// Platforms/domains owned and founded, as supplied by the user.
+export const VENTURES: VentureItem[] = [
+  { name: 'Aakhetak', domain: 'Aakhetak.com', url: 'https://Aakhetak.com', role: 'Founder & Owner', order: 0 },
+  { name: 'Printf', domain: 'Printf.co.in', url: 'https://Printf.co.in', role: 'Founder & Owner', order: 1 },
+  {
+    name: 'ViralBuzz',
+    domain: 'ViralBuzz.co.in',
+    url: 'https://ViralBuzz.co.in',
+    role: 'Founder & Owner',
+    order: 2,
+  },
+  { name: 'Nobledon', domain: 'Nobledon.in', url: 'https://Nobledon.in', role: 'Founder & Owner', order: 3 },
 ];

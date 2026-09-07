@@ -33,7 +33,6 @@ export function AboutPage() {
               <strong>{IDENTITY.displayName}</strong> · {IDENTITY.professionalTitle} ·{' '}
               {IDENTITY.affiliation}, {IDENTITY.affiliationCountry}
             </p>
-            <p>Department (per Google Scholar): {PERSON.department}</p>
             <p>{PERSON.shortBio}</p>
             <p className={styles.crossLinks}>
               <Link to="/education">Education →</Link>

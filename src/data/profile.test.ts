@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { EDUCATION, EXPERIENCE, RESEARCH_INTERESTS, PUBLICATIONS, PRESENTATIONS, CERTIFICATIONS } from './profile';
+import { EDUCATION, EXPERIENCE, RESEARCH_INTERESTS, PUBLICATIONS, PRESENTATIONS, CERTIFICATIONS, VENTURES } from './profile';
 
 describe('profile data counts (matches verified source data)', () => {
   it('has exactly 3 education records', () => {
@@ -22,6 +22,20 @@ describe('profile data counts (matches verified source data)', () => {
   });
   it('has exactly 8 certifications', () => {
     expect(CERTIFICATIONS).toHaveLength(8);
+  });
+
+  it('has exactly 4 founder/owner ventures, each with a Founder & Owner role and an https URL matching its domain', () => {
+    expect(VENTURES).toHaveLength(4);
+    for (const v of VENTURES) {
+      expect(v.role).toBe('Founder & Owner');
+      expect(v.url).toBe(`https://${v.domain}`);
+    }
+    expect(VENTURES.map((v) => v.domain)).toEqual([
+      'Aakhetak.com',
+      'Printf.co.in',
+      'ViralBuzz.co.in',
+      'Nobledon.in',
+    ]);
   });
 
   it('never fabricates a research area not in the confirmed taxonomy', () => {
