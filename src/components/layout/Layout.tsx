@@ -3,10 +3,12 @@ import { Navigation } from './Navigation';
 import { Footer } from './Footer';
 import { Rail } from './Rail';
 import { SOCIAL_RAIL_LINKS, ACADEMIC_RAIL_LINKS } from '@/lib/socialConfig';
+import { AnalyticsTracker } from '@/components/analytics/AnalyticsTracker';
 
 export function Layout() {
   return (
     <>
+      <AnalyticsTracker />
       <a href="#main-content" className="skip-link">
         Skip to content
       </a>
