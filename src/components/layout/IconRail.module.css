@@ -1,0 +1,109 @@
+.rail {
+  position: fixed;
+  top: 50%;
+  right: var(--space-4);
+  transform: translateY(-50%);
+  z-index: 90;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: var(--space-2);
+  background: rgba(21, 27, 35, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.item {
+  display: flex;
+}
+
+.iconLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+  position: relative;
+  background: transparent;
+  border: none;
+  font: inherit;
+  padding: 0;
+}
+
+.iconLink:hover {
+  color: var(--color-accent-primary);
+  background: var(--color-surface-2);
+}
+
+/* Coming-soon: never color alone — reduced opacity + dashed border +
+   a small dot + the tooltip text together mark it inactive. A real
+   <button aria-disabled="true">, not a plain span, so it stays
+   naturally focusable/announced but its click is a no-op. */
+.comingSoon {
+  opacity: 0.45;
+  border: 1px dashed var(--color-border-strong) !important;
+  cursor: default;
+}
+
+.comingSoon:hover {
+  color: var(--color-text-secondary);
+  background: transparent;
+}
+
+.comingSoonDot {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iconLink {
+    transition: none;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .rail {
+    right: var(--space-3);
+  }
+}
+
+/* Mobile: fixed vertical rail would cover content, so it becomes a
+   static horizontal row rendered inline (see Layout.tsx), never fixed. */
+@media (max-width: 768px) {
+  .rail {
+    position: static;
+    top: auto;
+    right: auto;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    padding: var(--space-4) 0;
+  }
+
+  .list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    padding: 0;
+  }
+}

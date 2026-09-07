@@ -1,0 +1,11 @@
+.section {
+  padding: var(--space-8) 0;
+}
+
+.profileRow {
+  display: flex;
+  gap: var(--space-6);
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}

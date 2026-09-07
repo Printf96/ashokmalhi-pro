@@ -1,0 +1,35 @@
+.hero {
+  padding: var(--space-9) 0 var(--space-8);
+}
+
+.heroInner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+  flex-wrap: wrap;
+}
+
+.eyebrow {
+  color: var(--color-accent-primary);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 var(--space-3);
+}
+
+.name {
+  margin-bottom: var(--space-2);
+}
+
+.titleLine {
+  font-size: var(--fs-lg);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 640px) {
+  .heroInner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
