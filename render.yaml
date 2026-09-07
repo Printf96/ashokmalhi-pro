@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: ashokmalhi-pro
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      # SPA fallback: every path serves index.html so client-side
+      # routing (React Router) works on direct URL access and refresh
+      # (e.g. /publications, /research) — otherwise Render's static
+      # host would 404 on any path except "/".
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
